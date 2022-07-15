@@ -25,9 +25,8 @@ class DataManager:
             count_pages = ads_count // number_ads_per_page + 1
         return count_pages
 
-    def get_data(self):
-        # for page in range(1, self.get_page_count() + 1)
-        for page in range(1, 3):
+    def get_data(self, number_of_pages):
+        for page in range(1, number_of_pages + 1):
             response = requests.get(change_url(page), headers=HEADERS).text
             soup = BeautifulSoup(response, "html.parser")
             self.data.append(json.loads(soup.select_one("script[data-zrr-shared-data-key]").contents[0].strip("!<>-")))
@@ -50,12 +49,3 @@ class DataManager:
                     self.prices.append(int(result["units"][0]["price"].strip("$+/mo").replace(",", "")))
                 else:
                     self.prices.append(int(result["price"].strip("$+/mo").replace(",", "")))
-
-
-if __name__ == "__main__":
-    data_parser = DataManager()
-    data_parser.get_data()
-    data_parser.get_house_links()
-    data_parser.get_addresses()
-    data_parser.get_prices()
-    print(data_parser.prices)
