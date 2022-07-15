@@ -1,4 +1,5 @@
 import json
+import lxml
 import requests
 from urllib.parse import parse_qs, urlparse
 from bs4 import BeautifulSoup
