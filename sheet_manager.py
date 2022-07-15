@@ -10,6 +10,9 @@ from input_data import GOOGLE_FORM_LINK
 
 
 class SheetManager:
+    """
+    This class save data to google sheets with Selenium.
+    """
 
     def __init__(self):
         self.options = webdriver.ChromeOptions()
@@ -18,6 +21,13 @@ class SheetManager:
         self.data_manager = DataManager()
 
     def fill_google_sheet(self, address, price, link):
+        """
+        This function fill google sheet from data what DataManager class was parsed
+        :param address: Address from ad
+        :param price: Price from ad
+        :param link: Link from ad
+        :return: None
+        """
         self.driver.get(GOOGLE_FORM_LINK)
         sleep(1)
 
@@ -39,6 +49,11 @@ class SheetManager:
 
 
 def save_to_csv(data):
+    """
+    This function save all parsed data to csv file.
+    :param data: Data what DataManager class was parsed
+    :return: None
+    """
     with open("rent.csv", "w", newline='') as file:
         writer = csv.writer(file, delimiter=";")
         writer.writerow(["Address", "Price per month", "Link to the property?"])
