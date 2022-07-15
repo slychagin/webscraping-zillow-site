@@ -1,5 +1,4 @@
-GOOGLE_FORM_LINK = "https://docs.google.com/forms/d/e/1FAIpQLSdZeaipy_AvGN2RgXRysuKObsS_g0l7QJJCshCn3nWR5JlQ0w" \
-                   "/viewform?usp=sf_link "
+GOOGLE_FORM_LINK = "https://docs.google.com/forms/d/e/1FAIpQLSdZeaipy_AvGN2RgXRysuKObsS_g0l7QJJCshCn3nWR5JlQ0w/viewform?usp=sf_link "
 HEADERS = {
     "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 "
                   "Safari/537.36",

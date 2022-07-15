@@ -1,12 +1,14 @@
 import json
-import lxml
 import requests
-from urllib.parse import parse_qs, urlparse
 from bs4 import BeautifulSoup
+from urllib.parse import parse_qs, urlparse
 from input_data import FIRST_PAGE_URL, HEADERS, change_url
 
 
 class DataManager:
+    """
+    This class parse data from https://www.zillow.com
+    """
 
     def __init__(self):
         self.house_links = []

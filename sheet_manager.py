@@ -36,7 +36,6 @@ class SheetManager:
 
         enter_next_answer = self.driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/div[1]/div/div[4]/a')
         enter_next_answer.send_keys(Keys.ENTER)
-        self.driver.quit()
 
 
 def save_to_csv(data):
